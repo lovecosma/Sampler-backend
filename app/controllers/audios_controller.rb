@@ -15,7 +15,7 @@ class AudiosController < ApplicationController
 
   # POST /audios
   def create
-    audio = Audio.new(name: params[:name])
+    audio = Audio.new(name: params[:name], color: params[:color])
     audio.save!
     if(params[:file])
       audio.avatar.attach(params[:file])
@@ -52,6 +52,6 @@ class AudiosController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def audio_params
-      params.require(:audio).permit(:name, :file)
+      params.require(:audio).permit(:name, :file, :color)
     end
 end
