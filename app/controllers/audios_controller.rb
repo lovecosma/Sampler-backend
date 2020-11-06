@@ -15,20 +15,26 @@ class AudiosController < ApplicationController
 
   # POST /audios
   def create
-    audio = Audio.new(name: params[:name], color: params[:color])
-    audio.save!
-    if(params[:file])
-      audio.avatar.attach(params[:file])
-      audio.url = url_for(audio.avatar)
-    end 
-    # @audio = Audio.new(audio_params)
 
-    if audio.save
-      render json: audio, status: :created, location: audio
+    audio = Audio.new(name: params[:name], color: params[:color])
+
+    if params[:file]
+        if audio.save
+            audio.avatar.attach(params[:file])
+            audio.url = url_for(audio.avatar)
+            if audio.save
+              render json: audio, status: :created, location: audio
+            else
+              render json: audio.errors, status: :unprocessable_entity
+            end
+        else
+  
+        end 
     else
-      render json: audio.errors, status: :unprocessable_entity
-    end
-  end
+      render json: {messsage: "You must upload a file"}
+    end 
+    
+ end
 
   # PATCH/PUT /audios/1
   def update
