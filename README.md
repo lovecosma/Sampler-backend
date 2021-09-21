@@ -1,24 +1,22 @@
-# README
+# This is the backend for a Simple Web Audio Sampler
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# What is a sampler?
 
-Things you may want to cover:
+A sampler is an electronic musical instrument which uses sound recordings (or "samples") of real instrument sounds (e.g., a piano, violin or trumpet), excerpts from recorded songs (e.g., a five-second bass guitar riff from a funk song) or found sounds (e.g., sirens and ocean waves). These sounds are then played back by means of the sampler program itself, a MIDI keyboard, sequencer or another triggering device (e.g., electronic drums) to perform or compose music. 
 
-* Ruby version
+This application allows users to upload new samples, or select from samples previously loaded by other users.
 
-* System dependencies
+# This repo contains the API that is used by the [client repo](https://github.com/lovecosma/Sampler-client)
 
-* Configuration
+# Visit heroku deploy:
 
-* Database creation
+- https://audio-sampler-api.herokuapp.com/
 
-* Database initialization
+# Key technology:
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Ruby on Rails - scalable and secure web framework utilizing MVC architecture with RESTful routes
+- postgresql - SQL compliant relational database management system
+- activerecord - object relational mapping library 
+- activestorage - storing files in pg database using activerecord
+- aws-s3 - API allowing file storage in cloud 
+- heroku - deployment
