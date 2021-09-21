@@ -6,7 +6,7 @@ A sampler is an electronic musical instrument which uses sound recordings (or "s
 
 This application allows users to upload new samples, or select from samples previously loaded by other users.
 
-# This repo contains the API that is used by the [client repo](https://github.com/lovecosma/Sampler-client)
+This repo contains the API that is used by the [client repo](https://github.com/lovecosma/Sampler-client)
 
 # Visit heroku deploy:
 
